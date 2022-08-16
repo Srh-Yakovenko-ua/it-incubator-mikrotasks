@@ -1,16 +1,16 @@
 import React from 'react';
 
- type BodyPropsType = {
+type BodyPropsType = {
     titleForBody: string
-    city : Array<ManyCityPropsType>
+    city: Array<ManyCityPropsType>
 }
 
 type ManyCityPropsType = {
-   id : string
+    id: string
 }
 
 
-export const manyCity : Array<ManyCityPropsType>  = [
+export const manyCity: Array<ManyCityPropsType> = [
     {id: 'Kharkiv'},
     {id: 'Kiev'},
     {id: 'Donetsk'},

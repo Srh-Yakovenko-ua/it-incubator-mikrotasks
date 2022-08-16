@@ -10,7 +10,7 @@ type ManyCityPropsType = {
 }
 
 
-export const manyCity: Array<ManyCityPropsType> = [
+export const differentCities: Array<ManyCityPropsType> = [
     {id: 'Kharkiv'},
     {id: 'Kiev'},
     {id: 'Donetsk'},

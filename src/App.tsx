@@ -29,6 +29,13 @@ function App() {
     //     {manufacturer: 'Audi', model: 'rs6'}
     // ]
 
+    const ButtonFoo1 = (subscriber : string) => {
+        console.log(subscriber)
+    }
+
+    const ButtonFoo2 = (subscriber : string) => {
+        console.log(subscriber)
+    }
 
     return (
         // <NewComponent students={students}/>
@@ -36,8 +43,8 @@ function App() {
 
 
         <div className={'App'}>
-            <Button name={'Channel - 1'}/>
-            <Button name={'Channel - 2'}/>
+            <Button name={'Channel - 1'} callBack={()=>ButtonFoo1('Ivan')}/>
+            <Button name={'Channel - 2'} callBack={()=>ButtonFoo2('Vasya')}/>
 
         </div>
 

@@ -5,10 +5,12 @@ import {Body, differentCities} from './site/Body';
 import {Footer} from './site/Footer';
 import {NewComponent} from './site/NewComponent';
 import {TopCars} from './site/TopCars';
-import {Button} from './components/Button';
+
 import MoneyFilter from './MoneyFilter/MoneyFilter';
-import {InputWithButton} from './input/InputWithButton';
+import {InputWithButton} from './inputWithButton/InputWithButton';
 import {logDOM} from '@testing-library/react';
+import {Input} from './Input/Input';
+import {ButtonButton} from './Input/Button';
 
 // export type FilterValuesType = 'all' | 'completed' | 'active';
 
@@ -91,7 +93,9 @@ function App() {
         //  <MoneyFilter nominalMoney={nominalMoney} callBack={oneClickHandler}/>
 
         <div className={'App'}>
-            <InputWithButton addMessage={addMessage}/>
+            {/*<InputWithButton addMessage={addMessage}/>*/}
+            <Input/>
+            <ButtonButton/>
             <div>
                 {message.map((el, index) => {
                     return (

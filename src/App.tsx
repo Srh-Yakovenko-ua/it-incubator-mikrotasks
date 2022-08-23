@@ -7,7 +7,8 @@ import {NewComponent} from './site/NewComponent';
 import {TopCars} from './site/TopCars';
 import {Button} from './components/Button';
 import MoneyFilter from './MoneyFilter/MoneyFilter';
-import {Input} from './input/Input';
+import {InputWithButton} from './input/InputWithButton';
+import {logDOM} from '@testing-library/react';
 
 // export type FilterValuesType = 'all' | 'completed' | 'active';
 
@@ -78,6 +79,11 @@ function App() {
         {message: 'message3'},
     ])
 
+    console.log(message)
+    const addMessage = (title: string) => {
+        setMessage([{message: title}, ...message])
+
+    }
 
     return (
         // <NewComponent students={students}/>
@@ -85,7 +91,7 @@ function App() {
         //  <MoneyFilter nominalMoney={nominalMoney} callBack={oneClickHandler}/>
 
         <div className={'App'}>
-            <Input/>
+            <InputWithButton addMessage={addMessage}/>
             <div>
                 {message.map((el, index) => {
                     return (

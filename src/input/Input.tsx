@@ -1,29 +1,25 @@
-import React from 'react';
+import React, {ChangeEvent, useState} from 'react';
 
-type InputProps ={
-    message : Array<MessageProps>
-}
-type MessageProps ={
-    message : string
-}
 
-export const Input = (props : InputProps) => {
+export const Input = () => {
 
+    let [title, setTitle] = useState('')
+
+    const onChangeInputHandler = (event: ChangeEvent<HTMLInputElement>) => {
+       setTitle(event.currentTarget.value)
+    }
 
     return (
         <div>
-            <input type="text"/>
-            <button>+</button>
-            <div>
-                {props.message.map((el, index) => {
-                    return (
-                        <div key={index}>
-                            {el.message}
-                        </div>
-                    );
-                })}
-            </div>
+            <input onChange={onChangeInputHandler}/>
+            <button onClick={() => {
+            }}>+
+            </button>
         </div>
-
     )
 }
+
+
+
+
+

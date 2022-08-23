@@ -78,14 +78,23 @@ function App() {
         {message: 'message3'},
     ])
 
+
     return (
         // <NewComponent students={students}/>
         // <TopCars  topCars={topCars}/>
         //  <MoneyFilter nominalMoney={nominalMoney} callBack={oneClickHandler}/>
 
         <div className={'App'}>
-            <Input message={message}/>
-
+            <Input/>
+            <div>
+                {message.map((el, index) => {
+                    return (
+                        <div key={index}>
+                            {el.message}
+                        </div>
+                    );
+                })}
+            </div>
         </div>
 
 

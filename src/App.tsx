@@ -5,12 +5,12 @@ import {Body, differentCities} from './site/Body';
 import {Footer} from './site/Footer';
 import {NewComponent} from './site/NewComponent';
 import {TopCars} from './site/TopCars';
-
 import MoneyFilter from './MoneyFilter/MoneyFilter';
 import {InputWithButton} from './inputWithButton/InputWithButton';
 import {logDOM} from '@testing-library/react';
 import {Input} from './Input/Input';
-import {ButtonButton} from './Input/Button';
+import {Button} from './Input/Button';
+
 
 // export type FilterValuesType = 'all' | 'completed' | 'active';
 
@@ -81,11 +81,13 @@ function App() {
         {message: 'message3'},
     ])
 
-    console.log(message)
-    const addMessage = (title: string) => {
-        setMessage([{message: title}, ...message])
+    const [value, setValue] = useState('')
 
+    const onClickCallBackHandler = () => {
+        setMessage([{message: value}, ...message])
+        setValue('')
     }
+
 
     return (
         // <NewComponent students={students}/>
@@ -93,9 +95,11 @@ function App() {
         //  <MoneyFilter nominalMoney={nominalMoney} callBack={oneClickHandler}/>
 
         <div className={'App'}>
-            {/*<InputWithButton addMessage={addMessage}/>*/}
-            <Input/>
-            <ButtonButton/>
+
+            <Input value={value} setValue={setValue}/>
+            <Button name={'+'}
+                    callback={onClickCallBackHandler}/>
+
             <div>
                 {message.map((el, index) => {
                     return (
@@ -106,8 +110,6 @@ function App() {
                 })}
             </div>
         </div>
-
-
     );
 }
 

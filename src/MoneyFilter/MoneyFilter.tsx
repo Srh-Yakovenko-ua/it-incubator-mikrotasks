@@ -14,9 +14,10 @@ type nominalMoneyType = {
 
 const MoneyFilter = (props: MoneyFilterType) => {
 
-    const oneClickHandler = (nameButton: string) => {
-        props.callBack(nameButton)
-    }
+    // const oneClickHandler = (nameButton: string) => {
+    //     props.callBack(nameButton)
+    // }
+
 
 
     return (
@@ -33,10 +34,10 @@ const MoneyFilter = (props: MoneyFilterType) => {
                 })}
             </ul>
 
-            <div style={{marginLeft: '20px'}}>
-                <button onClick={() => oneClickHandler('All')}>All</button>
-                <button onClick={() => oneClickHandler('Rubles')}>Rubles</button>
-                <button onClick={() => oneClickHandler('Dollars')}>Dollars</button>
+            <div style={{marginLeft: '10px'}}>
+                <button onClick={() => props.callBack('All')}>All</button>
+                <button onClick={() => props.callBack('Rubles')}>Rubles</button>
+                <button onClick={() => props.callBack('Dollars')}>Dollars</button>
             </div>
         </>
 

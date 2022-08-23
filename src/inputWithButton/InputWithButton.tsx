@@ -8,6 +8,7 @@ export const InputWithButton = (props: InputPropsType) => {
     let [title, setTitle] = useState('')
 
     const onChangeInputHandler = (event: ChangeEvent<HTMLInputElement>) => {
+        console.log(event)
         setTitle(event.currentTarget.value)
     }
 

@@ -6,7 +6,7 @@ import {Footer} from './site/Footer';
 import {NewComponent} from './site/NewComponent';
 import {TopCars} from './site/TopCars';
 import MoneyFilter from './MoneyFilter/MoneyFilter';
-import {InputWithButton} from './inputWithButton/InputWithButton';
+
 import {logDOM} from '@testing-library/react';
 import {Input} from './Input/Input';
 import {Button} from './Input/Button';
@@ -83,9 +83,13 @@ function App() {
 
     const [value, setValue] = useState('')
 
-    const onClickCallBackHandler = () => {
+    const addMessage = (value : string) => {
         setMessage([{message: value}, ...message])
         setValue('')
+    }
+
+    const onClickCallBackHandler = () => {
+        addMessage(value)
     }
 
 

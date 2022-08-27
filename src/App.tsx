@@ -6,8 +6,6 @@ import {Footer} from './site/Footer';
 import {NewComponent} from './site/NewComponent';
 import {TopCars} from './site/TopCars';
 import MoneyFilter from './MoneyFilter/MoneyFilter';
-
-import {logDOM} from '@testing-library/react';
 import {Input} from './Input/Input';
 import {Button} from './Input/Button';
 
@@ -81,17 +79,12 @@ function App() {
         {message: 'message3'},
     ])
 
-    const [value, setValue] = useState('')
+const [value , setValue] = useState('')
 
-    const addMessage = (value : string) => {
-        setMessage([{message: value}, ...message])
-        setValue('')
+    const AddMessage = () => {
+        let newMessage =  {message: value};
+        setMessage([ newMessage,...message])
     }
-
-    const onClickCallBackHandler = () => {
-        addMessage(value)
-    }
-
 
     return (
         // <NewComponent students={students}/>
@@ -99,10 +92,9 @@ function App() {
         //  <MoneyFilter nominalMoney={nominalMoney} callBack={oneClickHandler}/>
 
         <div className={'App'}>
+           <Input value={value} setValue={setValue}/>
+            <Button callback={AddMessage}/>
 
-            <Input value={value} setValue={setValue}/>
-            <Button name={'+'}
-                    callback={onClickCallBackHandler}/>
 
             <div>
                 {message.map((el, index) => {

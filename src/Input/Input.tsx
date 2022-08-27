@@ -1,20 +1,22 @@
-import React, {ChangeEvent, useState} from 'react';
+import React, {ChangeEvent} from 'react';
 
-type InputTypeProps = {
+type InputType = {
     value: string
-    setValue: (value : string) => void
+    setValue: (value: string) => void
 }
-export const Input = (props: InputTypeProps) => {
+export const Input = (props: InputType) => {
 
-
-    const onChangeInputHandle = (event: ChangeEvent<HTMLInputElement>) => {
-        props.setValue(event.currentTarget.value)
+    const onChangeHandler = (e: { currentTarget: { value: string; } }) => {
+        props.setValue(e.currentTarget.value)
     }
 
     return (
-        <input value={props.value} onChange={onChangeInputHandle}/>
+        <input onChange={onChangeHandler}/>
     );
 };
+
+
+
 
 
 

@@ -180,7 +180,7 @@ function App() {
 
 
     function changeFilter(todolistID: string, value: FilterValuesType) {
-
+        setTodolists(todolists.map(td => td.id === todolistID ? {...td, filter: value} : td))
     }
 
     const removeTodolist = (todolistID: string) => {

@@ -184,7 +184,8 @@ function App() {
     }
 
     const removeTodolist = (todolistID: string) => {
-
+           setTodolists(todolists.filter(f=> f.id !== todolistID))
+    setTasks(Object.fromEntries(Object.entries(tasks).filter(([key]) => key !== todolistID)))
 
     }
 
